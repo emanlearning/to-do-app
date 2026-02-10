@@ -15,7 +15,6 @@ list = sg.Listbox(values=functions.get_todolist(),
 
 exit_button = sg.Button("Exit")
 add_button = sg.Button("Add", size=(10, 1))
-edit_button = sg.Button("Edit")
 complete_button = sg.Button("Complete", tooltip="Delete the todo")
 edit_button = sg.Button("Edit")
 
