@@ -1,6 +1,11 @@
 import functions
 import PySimpleGUI as sg
 import time
+import os
+
+if not os.path.exists("todolist.txt"):
+    with open("todo_list.txt", "w") as file:
+        pass
 
 # TealMono, NeonBlue1
 
@@ -15,14 +20,14 @@ list = sg.Listbox(values=functions.get_todolist(),
 
 exit_button = sg.Button("Exit")
 add_button = sg.Button("Add", size=(10, 1))
-complete_button = sg.Button("Complete", tooltip="Delete the todo")
+comp_button = sg.Button("Complete", tooltip="Delete the todo")
 edit_button = sg.Button("Edit")
 
 window = sg.Window("Add the to_do",
                    layout=[[clock],
                            [label],
                            [input, add_button],
-                           [list, edit_button, complete_button],
+                           [list, edit_button, comp_button],
                            [exit_button]],
                    font=["Helvitica", 14])
 
